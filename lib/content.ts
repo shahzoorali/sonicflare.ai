@@ -8,7 +8,28 @@ export const nav = [
   { label: "About", href: "#about" },
   { label: "Why Us", href: "#why" },
   { label: "Capabilities", href: "#capabilities" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
+];
+
+export const team = [
+  {
+    name: "Venkatesh Kannan",
+    role: "Founding Team",
+    photo: "/team/venkatesh.jpg",
+    initials: "VK",
+    bio: [
+      "Venkatesh Kannan is a business strategist and entrepreneur with experience across manufacturing, finance, and growth strategy. He holds an MBA from Washington University in St. Louis, specializing in Finance and Entrepreneurship, and brings a strong analytical and execution-focused approach to business building and scale.",
+      "During his early career, Venkatesh interned with the Danube Fund in Hungary, where he gained exposure to valuation, investment analysis, and understanding how businesses create long-term enterprise value.",
+      "As the CEO of Dynetic Products, he leads industrial and engineering-focused operations with an emphasis on execution, operational efficiency, and strategic growth. Through Aarohana Advisors, he advises companies in the technology and retail sectors on market positioning, growth strategy, and business expansion.",
+      "Venkatesh's focus will be on structuring, strategic development, commercial planning, and enabling scalable growth platforms for next-generation digital infrastructure initiatives.",
+    ],
+    roles: [
+      { org: "Dynetic Products", detail: "Manufacturing — CEO" },
+      { org: "Davrah", detail: "Coffee — Founder" },
+      { org: "Aarohana Advisors", detail: "Advisory — Partner" },
+    ],
+  },
 ];
 
 export const hero = {

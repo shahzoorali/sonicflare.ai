@@ -6,6 +6,7 @@ import EcosystemDiagram from "@/components/EcosystemDiagram";
 import Capabilities from "@/components/Capabilities";
 import Timeline from "@/components/Timeline";
 import Stats from "@/components/Stats";
+import Team from "@/components/Team";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import { capabilitiesAI, capabilitiesITParks } from "@/lib/content";
@@ -23,6 +24,7 @@ export default function Home() {
         <Capabilities {...capabilitiesITParks} />
         <Timeline />
         <Stats />
+        <Team />
         <ContactForm />
       </main>
       <Footer />

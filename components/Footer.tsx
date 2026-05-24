@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 px-6 py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2 font-semibold">
-          <span className="h-3 w-3 rounded-full bg-flare" />
-          <span>{site.name}</span>
+        <div className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt={site.name} className="h-8 w-auto" />
         </div>
         <nav className="flex flex-wrap gap-6 text-sm text-white/60">
           {nav.map((item) => (

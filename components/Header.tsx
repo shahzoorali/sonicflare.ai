@@ -7,10 +7,15 @@ export default function Header() {
         <div className="flex items-center justify-between gap-3">
           <a
             href="#top"
-            className="flex items-center gap-2 font-semibold tracking-tight"
+            className="flex items-center"
+            aria-label={site.name}
           >
-            <span className="h-3 w-3 rounded-full bg-flare shadow-[0_0_16px] shadow-flare" />
-            <span>{site.name}</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt={site.name}
+              className="h-8 w-auto md:h-9"
+            />
           </a>
           <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
             {nav.map((item) => (

@@ -14,7 +14,11 @@ export default function Header() {
             <img
               src="/logo.png"
               alt={site.name}
-              className="h-8 w-auto md:h-9"
+              className="h-10 w-auto md:h-12"
+              style={{
+                filter:
+                  "brightness(1.55) contrast(1.1) drop-shadow(0 0 10px rgba(255,255,255,0.35))",
+              }}
             />
           </a>
           <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">

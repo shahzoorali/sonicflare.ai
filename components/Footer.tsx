@@ -6,7 +6,15 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt={site.name} className="h-8 w-auto" />
+          <img
+            src="/logo.png"
+            alt={site.name}
+            className="h-10 w-auto"
+            style={{
+              filter:
+                "brightness(1.55) contrast(1.1) drop-shadow(0 0 10px rgba(255,255,255,0.3))",
+            }}
+          />
         </div>
         <nav className="flex flex-wrap gap-6 text-sm text-white/60">
           {nav.map((item) => (

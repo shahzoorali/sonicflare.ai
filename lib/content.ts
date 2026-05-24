@@ -30,6 +30,23 @@ export const team = [
       { org: "Aarohana Advisors", detail: "Advisory — Partner" },
     ],
   },
+  {
+    name: "Vinita Surana",
+    role: "Founding Team",
+    photo: "/team/vinita.png",
+    initials: "VS",
+    bio: [
+      "Vinita Surana is a global business leader, investor, and strategic operator whose work spans energy, real estate, manufacturing, and early-stage technology. She brings to Sonic Flare AI a rare blend of operating depth and capital-market fluency, shaped by more than a decade of building and scaling complex, multi-stakeholder ventures.",
+      "She holds an MBA from The Wharton School, University of Pennsylvania, and a Master's in International Business from Manchester Business School — a foundation that informs her sharp commercial instincts and her global perspective on infrastructure, capital, and policy.",
+      "As Executive Director of the Surana Group of Companies, Vinita leads innovation and expansion across solar energy, real estate, and manufacturing — directly relevant to the land, power, and infrastructure foundations that hyperscale AI projects depend on. Through VS Capital Ventures and her role as Entrepreneur-in-Residence at Phi Capital, she invests in and mentors high-growth founders, and serves as a jury member on The Lion's Den, alongside leadership roles with FICCI YFLO, JITO, and FAPCCI.",
+      "At Sonic Flare AI, Vinita's focus is on investor coordination, strategic partnerships, and stakeholder enablement — connecting projects with aligned capital and helping shape the commercial structures that move large-scale AI infrastructure initiatives from intent to execution.",
+    ],
+    roles: [
+      { org: "Surana Group of Companies", detail: "Energy & Infrastructure — Executive Director" },
+      { org: "VS Capital Ventures", detail: "Venture Capital — Founder" },
+      { org: "Phi Capital", detail: "Entrepreneur-in-Residence" },
+    ],
+  },
 ];
 
 export const hero = {

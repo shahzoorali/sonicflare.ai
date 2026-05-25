@@ -1,5 +1,5 @@
 export const site = {
-  name: "Sonic Flare AI",
+  name: "SonicFlare AI",
   tagline: "Building the Infrastructure Powering the AI Economy",
   contactEmail: "hello@sonicflare.ai",
 };
@@ -36,10 +36,10 @@ export const team = [
     photo: "/team/vinita.png",
     initials: "VS",
     bio: [
-      "Vinita Surana is a global business leader, investor, and strategic operator whose work spans energy, real estate, manufacturing, and early-stage technology. She brings to Sonic Flare AI a rare blend of operating depth and capital-market fluency, shaped by more than a decade of building and scaling complex, multi-stakeholder ventures.",
+      "Vinita Surana is a global business leader, investor, and strategic operator whose work spans energy, real estate, manufacturing, and early-stage technology. She brings to SonicFlare AI a rare blend of operating depth and capital-market fluency, shaped by more than a decade of building and scaling complex, multi-stakeholder ventures.",
       "She holds an MBA from The Wharton School, University of Pennsylvania, and a Master's in International Business from Manchester Business School — a foundation that informs her sharp commercial instincts and her global perspective on infrastructure, capital, and policy.",
       "As Executive Director of the Surana Group of Companies, Vinita leads innovation and expansion across solar energy, real estate, and manufacturing — directly relevant to the land, power, and infrastructure foundations that hyperscale AI projects depend on. Through VS Capital Ventures and her role as Entrepreneur-in-Residence at Phi Capital, she invests in and mentors high-growth founders, and serves as a jury member on The Lion's Den, alongside leadership roles with FICCI YFLO, JITO, and FAPCCI.",
-      "At Sonic Flare AI, Vinita's focus is on investor coordination, strategic partnerships, and stakeholder enablement — connecting projects with aligned capital and helping shape the commercial structures that move large-scale AI infrastructure initiatives from intent to execution.",
+      "At SonicFlare AI, Vinita's focus is on investor coordination, strategic partnerships, and stakeholder enablement — connecting projects with aligned capital and helping shape the commercial structures that move large-scale AI infrastructure initiatives from intent to execution.",
     ],
     roles: [
       { org: "Surana Group of Companies", detail: "Energy & Infrastructure — Executive Director" },
@@ -52,14 +52,14 @@ export const team = [
 export const hero = {
   headline: "Building the Infrastructure Powering the AI Economy",
   subheadline:
-    "Sonic Flare AI bridges governments, hyperscalers, investors, utilities, and local partners to bring AI infrastructure and technology ecosystems to life — from strategy and stakeholder alignment to execution and long-term operational success.",
+    "SonicFlare AI bridges governments, hyperscalers, investors, utilities, and local partners to bring AI infrastructure and technology ecosystems to life — from strategy and stakeholder alignment to execution and long-term operational success.",
   primaryCta: { label: "Talk to Us", href: "#contact" },
   secondaryCta: { label: "Explore Capabilities", href: "#capabilities" },
 };
 
 export const about = {
   title: "More Than Advisory. Built for Execution.",
-  body: "At Sonic Flare AI, we help turn large-scale AI infrastructure ambitions into operational reality. We work at the intersection of governments, hyperscalers, investors, utilities, infrastructure providers, and regional ecosystems — aligning the many moving pieces required to launch and scale transformational projects. We are not traditional consultants. We act as a strategic execution partner, helping facilitate alignment between stakeholders, accelerate decision-making, coordinate delivery, support launch, and remain involved post go-live to help ensure long-term success.",
+  body: "At SonicFlare AI, we help turn large-scale AI infrastructure ambitions into operational reality. We work at the intersection of governments, hyperscalers, investors, utilities, infrastructure providers, and regional ecosystems — aligning the many moving pieces required to launch and scale transformational projects. We are not traditional consultants. We act as a strategic execution partner, helping facilitate alignment between stakeholders, accelerate decision-making, coordinate delivery, support launch, and remain involved post go-live to help ensure long-term success.",
 };
 
 export const whyItems = [

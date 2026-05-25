@@ -8,7 +8,7 @@ export default function WhySection() {
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flare">
-                Why Sonic Flare AI
+                Why SonicFlare AI
               </p>
               <h2 className="display mt-3 max-w-2xl text-3xl text-ink md:text-5xl">
                 The alignment, speed, and execution to move projects forward.

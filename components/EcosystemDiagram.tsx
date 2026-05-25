@@ -26,7 +26,7 @@ export default function EcosystemDiagram() {
                 One partner aligning every stakeholder.
               </h2>
               <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
-                Sonic Flare AI sits at the center — connecting governments,
+                SonicFlare AI sits at the center — connecting governments,
                 hyperscalers, investors, utilities, EPC providers, and local
                 partners so projects move from intent to operation.
               </p>

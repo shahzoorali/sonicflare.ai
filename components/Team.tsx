@@ -11,7 +11,7 @@ export default function Team() {
                 Founding Team
               </p>
               <h2 className="display mt-3 max-w-2xl text-3xl text-ink md:text-5xl">
-                The people behind Sonic Flare AI.
+                The people behind SonicFlare AI.
               </h2>
             </div>
             <p className="max-w-sm text-sm text-muted">

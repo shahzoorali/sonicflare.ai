@@ -35,78 +35,104 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="px-6 py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-start">
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-flare">
-            Contact
-          </p>
-          <h2 className="text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
-            Let&apos;s bring your project to life.
-          </h2>
-          <p className="mt-5 max-w-md text-white/65">
-            Tell us about your AI infrastructure or technology ecosystem
-            ambitions. We&apos;ll help align the stakeholders to move it forward.
-          </p>
-          <a
-            href={`mailto:${site.contactEmail}`}
-            className="mt-6 inline-block text-flare transition hover:text-flare-soft"
-          >
-            {site.contactEmail}
-          </a>
-        </div>
-
-        {submitted ? (
-          <div className="flex flex-col items-start justify-center rounded-2xl border border-flare/30 bg-panel p-8">
-            <h3 className="text-xl font-semibold">Thank you.</h3>
-            <p className="mt-2 text-white/65">
-              Your message has been received. We&apos;ll be in touch shortly.
-            </p>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4 rounded-2xl border border-white/10 bg-panel p-8"
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field
-                label="Name"
-                value={form.name}
-                onChange={update("name")}
-                required
-              />
-              <Field
-                label="Company"
-                value={form.company}
-                onChange={update("company")}
-              />
+    <section id="contact" className="px-3 py-12 md:px-5 md:py-16">
+      <div className="mx-auto max-w-6xl">
+        <div className="card overflow-hidden p-6 md:p-12">
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flare">
+                Contact
+              </p>
+              <h2 className="display mt-3 text-3xl text-ink md:text-5xl">
+                Let&apos;s bring your project to life.
+              </h2>
+              <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+                Tell us about your AI infrastructure or technology ecosystem
+                ambitions. We&apos;ll help align the stakeholders to move it
+                forward.
+              </p>
+              <a
+                href={`mailto:${site.contactEmail}`}
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink/5 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink/10"
+              >
+                <span className="h-2 w-2 rounded-full bg-flare" />
+                {site.contactEmail}
+              </a>
             </div>
-            <Field
-              label="Email"
-              type="email"
-              value={form.email}
-              onChange={update("email")}
-              required
-            />
-            <label className="block">
-              <span className="text-sm text-white/70">Message</span>
-              <textarea
-                value={form.message}
-                onChange={update("message")}
-                rows={4}
-                required
-                className="mt-1.5 w-full rounded-lg border border-white/10 bg-ink px-3 py-2 text-sm outline-none transition focus:border-flare"
-              />
-            </label>
-            {error && <p className="text-sm text-flare">{error}</p>}
-            <button
-              type="submit"
-              className="w-full rounded-full bg-flare px-7 py-3 font-medium text-ink transition hover:bg-flare-soft"
-            >
-              Send Message
-            </button>
-          </form>
-        )}
+
+            {submitted ? (
+              <div className="flex flex-col items-start justify-center rounded-3xl border border-flare/30 bg-cream p-8">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-flare text-white">
+                  ✓
+                </span>
+                <h3 className="display mt-4 text-2xl text-ink">Thank you.</h3>
+                <p className="mt-2 text-muted">
+                  Your message has been received. We&apos;ll be in touch shortly.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4 rounded-3xl bg-cream p-6 md:p-8"
+              >
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field
+                    label="Name"
+                    value={form.name}
+                    onChange={update("name")}
+                    required
+                  />
+                  <Field
+                    label="Company"
+                    value={form.company}
+                    onChange={update("company")}
+                  />
+                </div>
+                <Field
+                  label="Email"
+                  type="email"
+                  value={form.email}
+                  onChange={update("email")}
+                  required
+                />
+                <label className="block">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted">
+                    Message
+                  </span>
+                  <textarea
+                    value={form.message}
+                    onChange={update("message")}
+                    rows={4}
+                    required
+                    className="mt-1.5 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-flare"
+                  />
+                </label>
+                {error && <p className="text-sm text-flare">{error}</p>}
+                <button
+                  type="submit"
+                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-ink py-3 pl-6 pr-2 text-sm font-semibold text-white transition hover:bg-flare"
+                >
+                  Send Message
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M7 17L17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </span>
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -127,13 +153,15 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-sm text-white/70">{label}</span>
+      <span className="text-xs font-semibold uppercase tracking-wider text-muted">
+        {label}
+      </span>
       <input
         type={type}
         value={value}
         onChange={onChange}
         required={required}
-        className="mt-1.5 w-full rounded-lg border border-white/10 bg-ink px-3 py-2 text-sm outline-none transition focus:border-flare"
+        className="mt-1.5 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-flare"
       />
     </label>
   );

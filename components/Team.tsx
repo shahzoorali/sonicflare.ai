@@ -21,13 +21,9 @@ export default function Team() {
                 <div
                   role="img"
                   aria-label={member.name}
-                  className="relative flex h-56 w-56 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-flare/30 to-ink bg-cover bg-center text-5xl font-semibold text-white/70"
+                  className="relative flex h-56 w-56 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-flare/30 to-ink bg-cover bg-center"
                   style={{ backgroundImage: `url(${member.photo})` }}
-                >
-                  <span className="opacity-60 mix-blend-overlay">
-                    {member.initials}
-                  </span>
-                </div>
+                />
                 <div className="mt-5 text-center md:text-left">
                   <h3 className="text-xl font-semibold">{member.name}</h3>
                   <p className="text-sm text-flare">{member.role}</p>

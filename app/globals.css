@@ -2,24 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
-  color: #0a0c14;
-  background:
-    radial-gradient(1200px 700px at 10% -10%, #ffd0a3 0%, transparent 60%),
-    radial-gradient(1000px 700px at 100% 0%, #ffbe7e 0%, transparent 55%),
-    linear-gradient(180deg, #ffe2c2 0%, #ffd1a3 100%);
-  background-attachment: fixed;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #f4f3ef;
+  color: #0e0f12;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 section {
@@ -32,26 +24,34 @@ section {
   }
 }
 
-.display {
-  font-family: "Archivo", "Inter", system-ui, sans-serif;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+.mesh-dark {
+  background-color: #0e0f12;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgba(207, 235, 45, 0.10) 0%, transparent 35%),
+    radial-gradient(circle at 82% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 110%, rgba(207, 235, 45, 0.08) 0%, transparent 45%),
+    linear-gradient(180deg, #14161b 0%, #0a0b0e 100%);
 }
 
-.flare-text {
-  background: linear-gradient(120deg, #ff6b1a 0%, #d8480e 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.mesh-dark-warm {
+  background-color: #0e0f12;
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(255, 122, 47, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(207, 235, 45, 0.10) 0%, transparent 40%),
+    linear-gradient(135deg, #1a1c22 0%, #0a0b0e 100%);
 }
 
-.card {
-  background: #ffffff;
-  border-radius: 2rem;
-  box-shadow: 0 12px 40px -20px rgba(20, 14, 5, 0.18);
+.mesh-dark-cool {
+  background-color: #0e0f12;
+  background-image:
+    radial-gradient(circle at 70% 20%, rgba(124, 144, 200, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(207, 235, 45, 0.10) 0%, transparent 40%),
+    linear-gradient(160deg, #16181f 0%, #0a0b0e 100%);
 }
 
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(10,12,20,0.12), transparent);
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }

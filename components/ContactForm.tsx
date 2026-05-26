@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/lib/content";
+import Arrow from "./Arrow";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -37,43 +38,45 @@ export default function ContactForm() {
   return (
     <section id="contact" className="px-3 py-12 md:px-5 md:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="card overflow-hidden p-6 md:p-12">
+        <div className="rounded-4xl bg-white p-6 md:p-12">
           <div className="grid gap-10 md:grid-cols-2 md:items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flare">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted">
                 Contact
               </p>
-              <h2 className="display mt-3 text-3xl text-ink md:text-5xl">
+              <h2 className="mt-3 text-3xl font-medium leading-tight text-ink md:text-5xl">
                 Let&apos;s bring your project to life.
               </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-muted md:text-base">
                 Tell us about your AI infrastructure or technology ecosystem
                 ambitions. We&apos;ll help align the stakeholders to move it
                 forward.
               </p>
               <a
                 href={`mailto:${site.contactEmail}`}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink/5 px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink/10"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink/40"
               >
-                <span className="h-2 w-2 rounded-full bg-flare" />
+                <span className="h-1.5 w-1.5 rounded-full bg-lime" />
                 {site.contactEmail}
               </a>
             </div>
 
             {submitted ? (
-              <div className="flex flex-col items-start justify-center rounded-3xl border border-flare/30 bg-cream p-8">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-flare text-white">
+              <div className="flex flex-col items-start justify-center rounded-3xl bg-paper p-8">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-lime text-ink">
                   ✓
                 </span>
-                <h3 className="display mt-4 text-2xl text-ink">Thank you.</h3>
-                <p className="mt-2 text-muted">
+                <h3 className="mt-4 text-2xl font-medium text-ink">
+                  Thank you.
+                </h3>
+                <p className="mt-2 text-sm text-muted">
                   Your message has been received. We&apos;ll be in touch shortly.
                 </p>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 rounded-3xl bg-cream p-6 md:p-8"
+                className="space-y-4 rounded-3xl bg-paper p-6 md:p-8"
               >
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field
@@ -96,7 +99,7 @@ export default function ContactForm() {
                   required
                 />
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted">
+                  <span className="text-[11px] font-medium uppercase tracking-wider text-muted">
                     Message
                   </span>
                   <textarea
@@ -104,29 +107,17 @@ export default function ContactForm() {
                     onChange={update("message")}
                     rows={4}
                     required
-                    className="mt-1.5 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-flare"
+                    className="mt-1.5 w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-ink/50"
                   />
                 </label>
-                {error && <p className="text-sm text-flare">{error}</p>}
+                {error && <p className="text-sm text-red-600">{error}</p>}
                 <button
                   type="submit"
-                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-ink py-3 pl-6 pr-2 text-sm font-semibold text-white transition hover:bg-flare"
+                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-ink py-3 pl-6 pr-2 text-sm font-medium text-white transition hover:opacity-90"
                 >
                   Send Message
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M7 17L17 7" />
-                      <path d="M8 7h9v9" />
-                    </svg>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-lime text-ink">
+                    <Arrow />
                   </span>
                 </button>
               </form>
@@ -153,7 +144,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-xs font-semibold uppercase tracking-wider text-muted">
+      <span className="text-[11px] font-medium uppercase tracking-wider text-muted">
         {label}
       </span>
       <input
@@ -161,7 +152,7 @@ function Field({
         value={value}
         onChange={onChange}
         required={required}
-        className="mt-1.5 w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-flare"
+        className="mt-1.5 w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-ink/50"
       />
     </label>
   );

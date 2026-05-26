@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import Arrow from "./Arrow";
+
 type Capability = { title: string; body: string };
 
 type Props = {
@@ -5,45 +10,88 @@ type Props = {
   eyebrow: string;
   title: string;
   items: Capability[];
+  meshClass?: string;
 };
 
-export default function Capabilities({ id, eyebrow, title, items }: Props) {
-  return (
-    <section id={id} className="px-3 py-12 md:px-5 md:py-16">
-      <div className="mx-auto max-w-6xl">
-        <div className="card p-6 md:p-12">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flare">
-                {eyebrow}
-              </p>
-              <h2 className="display mt-3 max-w-2xl text-3xl text-ink md:text-5xl">
-                {title}
-              </h2>
-            </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-ink/5 px-3 py-1.5 text-xs font-semibold text-ink/70">
-              {items.length} capabilities
-            </span>
-          </div>
+export default function Capabilities({
+  id,
+  eyebrow,
+  title,
+  items,
+  meshClass = "mesh-dark",
+}: Props) {
+  const [active, setActive] = useState(0);
+  const activeItem = items[active];
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {items.map((item, i) => (
-              <div
-                key={item.title}
-                className="group rounded-3xl border border-ink/8 bg-cream p-5 transition hover:-translate-y-0.5 hover:bg-white hover:shadow-card"
+  return (
+    <section id={id} className="px-3 py-6 md:px-5 md:py-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="overflow-hidden rounded-4xl">
+          <div className={`grid gap-px md:grid-cols-[1fr_1.1fr]`}>
+            <div className="bg-ink p-6 text-white md:p-10">
+              <div className="mb-8 max-w-md">
+                <p className="text-xs font-medium uppercase tracking-wider text-white/55">
+                  {eyebrow}
+                </p>
+                <h2 className="mt-3 text-2xl font-medium leading-tight md:text-4xl">
+                  {title}
+                </h2>
+              </div>
+
+              <ul className="space-y-1">
+                {items.map((item, i) => (
+                  <li key={item.title}>
+                    <button
+                      onClick={() => setActive(i)}
+                      className={`group flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition ${
+                        i === active
+                          ? "bg-white/8 text-white"
+                          : "text-white/60 hover:bg-white/5 hover:text-white/85"
+                      }`}
+                    >
+                      <span
+                        className={`flex h-2 w-2 shrink-0 rounded-full transition ${
+                          i === active ? "bg-lime" : "bg-white/20"
+                        }`}
+                      />
+                      <span className="text-sm font-medium md:text-base">
+                        {item.title}
+                      </span>
+                      <span className="ml-auto text-[10px] text-white/35">
+                        0{i + 1}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contact"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-lime py-2 pl-5 pr-2 text-sm font-medium text-ink transition hover:bg-lime-dark"
               >
-                <div className="flex items-center justify-between">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-xs font-bold text-ink shadow-card">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-2 w-2 rounded-full bg-flare/60 group-hover:bg-flare" />
-                </div>
-                <h3 className="display mt-5 text-lg text-ink">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {item.body}
+                Discuss your project
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white">
+                  <Arrow />
+                </span>
+              </a>
+            </div>
+
+            <div
+              className={`relative ${meshClass} flex flex-col justify-end p-6 text-white md:p-10`}
+            >
+              <div className="absolute inset-0 grid-lines opacity-30" />
+              <div className="relative max-w-md rounded-2xl bg-white p-6 text-ink shadow-card">
+                <p className="text-[11px] font-medium uppercase tracking-wider text-muted">
+                  {String(active + 1).padStart(2, "0")} · {activeItem.title}
+                </p>
+                <h3 className="mt-2 text-xl font-medium md:text-2xl">
+                  {activeItem.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {activeItem.body}
                 </p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

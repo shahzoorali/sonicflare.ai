@@ -1,14 +1,5 @@
 import { ecosystemNodes } from "@/lib/content";
 
-const dotColors = [
-  "from-flare to-flare-deep",
-  "from-amber-300 to-amber-500",
-  "from-sky-300 to-sky-500",
-  "from-emerald-300 to-emerald-500",
-  "from-violet-300 to-violet-500",
-  "from-rose-300 to-rose-500",
-];
-
 export default function EcosystemDiagram() {
   const center = 50;
   const radius = 36;
@@ -16,34 +7,32 @@ export default function EcosystemDiagram() {
   return (
     <section className="px-3 py-12 md:px-5 md:py-16">
       <div className="mx-auto max-w-6xl">
-        <div className="card overflow-hidden p-6 md:p-12">
+        <div className="rounded-4xl bg-white p-6 md:p-12">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-flare">
+              <p className="text-xs font-medium uppercase tracking-wider text-muted">
                 The Ecosystem
               </p>
-              <h2 className="display mt-3 text-3xl text-ink md:text-5xl">
+              <h2 className="mt-3 text-3xl font-medium leading-tight text-ink md:text-5xl">
                 One partner aligning every stakeholder.
               </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-muted md:text-base">
                 SonicFlare AI sits at the center — connecting governments,
                 hyperscalers, investors, utilities, EPC providers, and local
                 partners so projects move from intent to operation.
               </p>
 
-              <div className="mt-6 grid grid-cols-2 gap-2">
-                {ecosystemNodes.map((node, i) => (
-                  <div
+              <ul className="mt-6 grid grid-cols-2 gap-2">
+                {ecosystemNodes.map((node) => (
+                  <li
                     key={node}
-                    className="flex items-center gap-2 rounded-2xl bg-cream px-3 py-2 text-xs font-semibold text-ink"
+                    className="flex items-center gap-2 rounded-2xl border border-line bg-paper px-3 py-2 text-xs font-medium text-ink"
                   >
-                    <span
-                      className={`h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br ${dotColors[i]}`}
-                    />
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-lime" />
                     {node}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div className="relative mx-auto aspect-square w-full max-w-[440px]">
@@ -63,20 +52,23 @@ export default function EcosystemDiagram() {
                       y1={center}
                       x2={x}
                       y2={y}
-                      stroke="#0a0c14"
-                      strokeOpacity="0.12"
-                      strokeWidth="0.4"
-                      strokeDasharray="1 1.5"
+                      stroke="#0e0f12"
+                      strokeOpacity="0.15"
+                      strokeWidth="0.3"
+                      strokeDasharray="0.8 1.2"
                     />
                   );
                 })}
               </svg>
 
-              <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-br from-flare to-flare-deep text-center text-sm font-semibold text-white shadow-pop">
-                Sonic
-                <br />
-                Flare AI
+              <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-center text-sm font-medium text-white">
+                <span>
+                  SonicFlare
+                  <br />
+                  AI
+                </span>
               </div>
+              <span className="absolute left-1/2 top-1/2 z-0 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime/40 blur-2xl" />
 
               {ecosystemNodes.map((node, i) => {
                 const angle =
@@ -86,7 +78,7 @@ export default function EcosystemDiagram() {
                 return (
                   <div
                     key={node}
-                    className="absolute flex h-[24%] w-[24%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-ink/10 bg-white p-2 text-center text-[11px] font-semibold text-ink shadow-card"
+                    className="absolute flex h-[22%] w-[22%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-2xl border border-line bg-white p-2 text-center text-[11px] font-medium text-ink"
                     style={{ left: `${left}%`, top: `${top}%` }}
                   >
                     {node}

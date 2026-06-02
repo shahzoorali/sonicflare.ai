@@ -55,3 +55,152 @@ section {
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
 }
+
+/* ───────────────────────────────────────────────────────
+   Scroll Reveal Animation System
+   ─────────────────────────────────────────────────────── */
+
+.sr-wrapper {
+  will-change: transform, opacity;
+}
+
+/* Hidden states per variant */
+.sr-hidden[data-sr-variant="fade-up"] {
+  opacity: 0;
+  transform: translateY(48px);
+}
+
+.sr-hidden[data-sr-variant="fade-down"] {
+  opacity: 0;
+  transform: translateY(-48px);
+}
+
+.sr-hidden[data-sr-variant="fade-in"] {
+  opacity: 0;
+}
+
+.sr-hidden[data-sr-variant="slide-left"] {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.sr-hidden[data-sr-variant="slide-right"] {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.sr-hidden[data-sr-variant="scale-up"] {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.sr-hidden[data-sr-variant="blur-in"] {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(24px);
+}
+
+/* Visible state – all variants converge */
+.sr-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition:
+    opacity var(--sr-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0ms),
+    transform var(--sr-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0ms),
+    filter var(--sr-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0ms);
+}
+
+/* Stagger children — each child gets its own delay */
+.sr-stagger-child {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--sr-child-delay, 0ms),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--sr-child-delay, 0ms);
+}
+
+.sr-visible .sr-stagger-child {
+  opacity: 1;
+  transform: none;
+}
+
+/* ───────────────────────────────────────────────────────
+   Ambient & micro-interaction enhancements
+   ─────────────────────────────────────────────────────── */
+
+/* Floating glow pulse for Hero */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+.glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Subtle grid drift for mesh backgrounds */
+@keyframes grid-drift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 48px 48px, 48px 48px; }
+}
+
+.grid-lines-animated {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-drift 20s linear infinite;
+}
+
+/* Counter / number roll-up animation */
+@keyframes counter-grow {
+  from { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+  to { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+}
+
+/* Ecosystem node orbit pulse */
+@keyframes orbit-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(207, 235, 45, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(207, 235, 45, 0.15); }
+}
+
+.orbit-pulse {
+  animation: orbit-pulse 3s ease-in-out infinite;
+  animation-delay: calc(var(--orbit-i, 0) * 500ms);
+}
+
+/* Smooth card hover lift */
+.hover-lift {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px -20px rgba(14, 15, 18, 0.18);
+}
+
+/* Stat bar grow */
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sr-hidden,
+  .sr-visible,
+  .sr-stagger-child,
+  .glow-pulse,
+  .grid-lines-animated,
+  .orbit-pulse,
+  .hover-lift,
+  .hover-lift:hover {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

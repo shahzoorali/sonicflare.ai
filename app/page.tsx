@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StakeholderStrip from "@/components/StakeholderStrip";
 import About from "@/components/About";
-import FounderVoice from "@/components/FounderVoice";
 import Capabilities from "@/components/Capabilities";
 import WhySection from "@/components/WhySection";
 import EcosystemDiagram from "@/components/EcosystemDiagram";
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <StakeholderStrip />
         <About />
-        <FounderVoice />
         <Capabilities {...capabilitiesAI} meshClass="mesh-dark-warm" />
         <Capabilities {...capabilitiesITParks} meshClass="mesh-dark-cool" />
         <WhySection />

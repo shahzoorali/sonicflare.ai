@@ -31,16 +31,15 @@ export default function Team() {
             >
               <article className="card-light overflow-hidden rounded-4xl hover-lift">
                 <div className="flex flex-col md:flex-row">
-                  {/* Photo — compact square on mobile, tall sidebar on desktop */}
-                  <div
-                    className="h-56 w-full shrink-0 bg-cover bg-top sm:h-64 md:h-auto md:w-72 lg:w-80"
-                    style={{
-                      backgroundImage: `url(${member.photo})`,
-                      minHeight: "clamp(224px, 30vw, 340px)",
-                    }}
-                    role="img"
-                    aria-label={member.name}
-                  />
+                  {/* Photo — square crop on mobile, fixed sidebar on desktop */}
+                  <div className="aspect-square w-full shrink-0 overflow-hidden md:aspect-auto md:h-auto md:w-72 lg:w-80">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="h-full w-full object-cover object-top md:min-h-[340px]"
+                    />
+                  </div>
                   {/* Bio */}
                   <div className="flex flex-col justify-center p-6 md:p-10">
                     <span className="self-start bg-paper px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-red">

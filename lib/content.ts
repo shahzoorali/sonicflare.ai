@@ -6,7 +6,6 @@ export const site = {
 
 export const nav = [
   { label: "About", href: "#about" },
-  { label: "Why Us", href: "#why" },
   { label: "Capabilities", href: "#capabilities" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
@@ -28,6 +27,22 @@ export const team = [
       { org: "Dynetic Products", detail: "Manufacturing — CEO" },
       { org: "Davrah", detail: "Coffee — Founder" },
       { org: "Aarohana Advisors", detail: "Advisory — Partner" },
+    ],
+  },
+  {
+    name: "Kasturi Rangan",
+    role: "Co-Founder",
+    photo: "/team/kasturi-rangan.png",
+    initials: "KR",
+    bio: [
+      "Kasturi Rangan is a technology entrepreneur, investor, and operator with over 20 years of global leadership experience. Formerly Chief Creative Officer of side.inc (formerly PTW) and CEO of five international subsidiaries, he has overseen organizations that collectively generated more than $1.5 billion in revenue.",
+      "As Co-Founder of SonicFlare, he works with hyperscalers, governments, and strategic partners to build the next generation of AI infrastructure.",
+      "He is also an active investor and founder with interests spanning gaming, music, AI, and emerging technologies.",
+    ],
+    roles: [
+      { org: "side.inc (formerly PTW)", detail: "Chief Creative Officer" },
+      { org: "Five International Subsidiaries", detail: "CEO" },
+      { org: "SonicFlare AI", detail: "Co-Founder" },
     ],
   },
   {

@@ -4,103 +4,115 @@
 
 html {
   scroll-behavior: smooth;
+  background: #f5f2f8;
 }
 
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: #f4f3ef;
-  color: #0e0f12;
+  color: #131925;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  /* Equinix-style soft lavender gradient base */
+  background-color: #f5f2f8;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(233, 28, 36, 0.05) 0%, transparent 32%),
+    radial-gradient(circle at 85% 8%, rgba(120, 110, 200, 0.08) 0%, transparent 38%),
+    linear-gradient(60deg, #f3eef8 0%, #f6f1f4 45%, #eef1f8 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: #e91c24;
+  color: #fff;
+}
+
+.font-display {
+  font-family: "Montserrat", "Inter", system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 section {
-  scroll-margin-top: 8rem;
-}
-
-@media (min-width: 768px) {
-  section {
-    scroll-margin-top: 6rem;
-  }
-}
-
-.mesh-dark {
-  background-color: #0e0f12;
-  background-image:
-    radial-gradient(circle at 18% 22%, rgba(207, 235, 45, 0.10) 0%, transparent 35%),
-    radial-gradient(circle at 82% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 50% 110%, rgba(207, 235, 45, 0.08) 0%, transparent 45%),
-    linear-gradient(180deg, #14161b 0%, #0a0b0e 100%);
-}
-
-.mesh-dark-warm {
-  background-color: #0e0f12;
-  background-image:
-    radial-gradient(circle at 30% 30%, rgba(255, 122, 47, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(207, 235, 45, 0.10) 0%, transparent 40%),
-    linear-gradient(135deg, #1a1c22 0%, #0a0b0e 100%);
-}
-
-.mesh-dark-cool {
-  background-color: #0e0f12;
-  background-image:
-    radial-gradient(circle at 70% 20%, rgba(124, 144, 200, 0.18) 0%, transparent 45%),
-    radial-gradient(circle at 20% 80%, rgba(207, 235, 45, 0.10) 0%, transparent 40%),
-    linear-gradient(160deg, #16181f 0%, #0a0b0e 100%);
-}
-
-.grid-lines {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+  scroll-margin-top: 6rem;
 }
 
 /* ───────────────────────────────────────────────────────
-   Scroll Reveal Animation System
+   Equinix surfaces
    ─────────────────────────────────────────────────────── */
 
-.sr-wrapper {
-  will-change: transform, opacity;
+/* Dark navy feature panel (the signature Equinix block) */
+.panel-dark {
+  background-color: #131925;
+  color: #fff;
 }
 
-/* Hidden states per variant */
-.sr-hidden[data-sr-variant="fade-up"] {
-  opacity: 0;
-  transform: translateY(48px);
+.panel-dark-card {
+  background-color: #1c2434;
+  border: 1px solid #2a3346;
 }
 
-.sr-hidden[data-sr-variant="fade-down"] {
-  opacity: 0;
-  transform: translateY(-48px);
+/* Light card on the lavender page */
+.card-light {
+  background: #ffffff;
+  border: 1px solid #e5e2ec;
 }
 
-.sr-hidden[data-sr-variant="fade-in"] {
-  opacity: 0;
+/* Gradient heading text: Equinix uses red → navy */
+.text-gradient {
+  background-image: linear-gradient(90deg, #e91c24 0%, #7a2a6d 45%, #131925 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.sr-hidden[data-sr-variant="slide-left"] {
-  opacity: 0;
-  transform: translateX(-60px);
+/* Red arrow link motif */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e91c24;
+  font-weight: 600;
+  transition: gap 0.25s ease;
+}
+.arrow-link:hover {
+  gap: 0.85rem;
 }
 
-.sr-hidden[data-sr-variant="slide-right"] {
-  opacity: 0;
-  transform: translateX(60px);
+/* Grid overlay for dark panels */
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
-.sr-hidden[data-sr-variant="scale-up"] {
-  opacity: 0;
-  transform: scale(0.92);
+@keyframes grid-drift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 56px 56px, 56px 56px; }
 }
 
-.sr-hidden[data-sr-variant="blur-in"] {
-  opacity: 0;
-  filter: blur(12px);
-  transform: translateY(24px);
+.grid-lines-animated {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  animation: grid-drift 22s linear infinite;
 }
 
-/* Visible state – all variants converge */
+/* ───────────────────────────────────────────────────────
+   Scroll Reveal (IntersectionObserver)
+   ─────────────────────────────────────────────────────── */
+
+.sr-wrapper { will-change: transform, opacity; }
+
+.sr-hidden[data-sr-variant="fade-up"] { opacity: 0; transform: translateY(48px); }
+.sr-hidden[data-sr-variant="fade-down"] { opacity: 0; transform: translateY(-48px); }
+.sr-hidden[data-sr-variant="fade-in"] { opacity: 0; }
+.sr-hidden[data-sr-variant="slide-left"] { opacity: 0; transform: translateX(-60px); }
+.sr-hidden[data-sr-variant="slide-right"] { opacity: 0; transform: translateX(60px); }
+.sr-hidden[data-sr-variant="scale-up"] { opacity: 0; transform: scale(0.92); }
+.sr-hidden[data-sr-variant="blur-in"] { opacity: 0; filter: blur(12px); transform: translateY(24px); }
+
 .sr-visible {
   opacity: 1 !important;
   transform: none !important;
@@ -111,7 +123,6 @@ section {
     filter var(--sr-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) var(--sr-delay, 0ms);
 }
 
-/* Stagger children — each child gets its own delay */
 .sr-stagger-child {
   opacity: 0;
   transform: translateY(24px);
@@ -120,74 +131,83 @@ section {
     transform 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--sr-child-delay, 0ms);
 }
 
-.sr-visible .sr-stagger-child {
-  opacity: 1;
-  transform: none;
-}
+.sr-visible .sr-stagger-child { opacity: 1; transform: none; }
 
 /* ───────────────────────────────────────────────────────
-   Ambient & micro-interaction enhancements
+   GSAP bullet-reveal (Equinix "distributed everywhere")
    ─────────────────────────────────────────────────────── */
 
-/* Floating glow pulse for Hero */
+/* Each bullet starts dim and lights up on scroll */
+.reveal-item { opacity: 0.35; transition: opacity 0.3s ease; }
+.reveal-item .reveal-dot { background: #3a4252; transition: background 0.3s ease; }
+
+/* ───────────────────────────────────────────────────────
+   Micro-interactions
+   ─────────────────────────────────────────────────────── */
+
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+  0%, 100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.15); }
 }
+.glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
 
-.glow-pulse {
-  animation: glow-pulse 4s ease-in-out infinite;
-}
-
-/* Subtle grid drift for mesh backgrounds */
-@keyframes grid-drift {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 48px 48px, 48px 48px; }
-}
-
-.grid-lines-animated {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-  animation: grid-drift 20s linear infinite;
-}
-
-/* Counter / number roll-up animation */
-@keyframes counter-grow {
-  from { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
-  to { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
-}
-
-/* Ecosystem node orbit pulse */
 @keyframes orbit-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(207, 235, 45, 0); }
-  50% { box-shadow: 0 0 0 8px rgba(207, 235, 45, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 28, 36, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(233, 28, 36, 0.12); }
 }
-
 .orbit-pulse {
   animation: orbit-pulse 3s ease-in-out infinite;
   animation-delay: calc(var(--orbit-i, 0) * 500ms);
 }
 
-/* Smooth card hover lift */
+/* Flowing dash along the connector lines — a subtle "signal travelling" feel */
+@keyframes dash-flow {
+  to { stroke-dashoffset: -8; }
+}
+.eco-line {
+  animation: dash-flow 2.4s linear infinite;
+}
+
+/* Slow continuous spin for the center's dashed ring */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 26s linear infinite; }
+.spin-slow-rev { animation: spin-slow 38s linear infinite reverse; }
+
 .hover-lift {
   transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+              box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 400ms ease;
 }
-
 .hover-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px -20px rgba(14, 15, 18, 0.18);
+  box-shadow: 0 24px 60px -28px rgba(19, 25, 37, 0.35);
 }
 
-/* Stat bar grow */
-@keyframes bar-grow {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+.animate-capability-card {
+  animation: capability-card 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Prefers reduced motion */
+@keyframes capability-card {
+  0% { opacity: 0; transform: translateY(12px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 32s linear infinite; }
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* ───────────────────────────────────────────────────────
+   Reduced motion
+   ─────────────────────────────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
   .sr-hidden,
   .sr-visible,
@@ -195,8 +215,14 @@ section {
   .glow-pulse,
   .grid-lines-animated,
   .orbit-pulse,
+  .eco-line,
+  .spin-slow,
+  .spin-slow-rev,
   .hover-lift,
-  .hover-lift:hover {
+  .hover-lift:hover,
+  .animate-marquee,
+  .animate-capability-card,
+  .reveal-item {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;

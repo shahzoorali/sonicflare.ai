@@ -37,16 +37,16 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="px-3 py-12 md:px-5 md:py-16">
-      <div className="mx-auto max-w-6xl">
+    <section id="contact" className="px-5 py-12 md:px-10 md:py-16">
+      <div className="mx-auto max-w-[1400px]">
         <ScrollReveal variant="fade-up" duration={800}>
-          <div className="rounded-4xl bg-white p-6 md:p-12">
+          <div className="card-light rounded-4xl p-8 md:p-14">
             <div className="grid gap-10 md:grid-cols-2 md:items-start">
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-muted">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red">
                   Contact
                 </p>
-                <h2 className="mt-3 text-3xl font-medium leading-tight text-ink md:text-5xl">
+                <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-5xl">
                   Let&apos;s bring your project to life.
                 </h2>
                 <p className="mt-5 max-w-md text-sm leading-relaxed text-muted md:text-base">
@@ -56,19 +56,19 @@ export default function ContactForm() {
                 </p>
                 <a
                   href={`mailto:${site.contactEmail}`}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-line bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:border-ink/40 hover:shadow-sm"
+                  className="mt-6 inline-flex items-center gap-2 border border-line bg-paper px-5 py-2.5 text-sm font-medium text-ink transition hover:border-red"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-red" />
                   {site.contactEmail}
                 </a>
               </div>
 
               {submitted ? (
-                <div className="flex flex-col items-start justify-center rounded-3xl bg-paper p-8">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-lime text-ink">
+                <div className="flex flex-col items-start justify-center rounded-3xl border border-line bg-paper p-8">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red text-white">
                     ✓
                   </span>
-                  <h3 className="mt-4 text-2xl font-medium text-ink">
+                  <h3 className="mt-4 font-display text-2xl font-bold text-ink">
                     Thank you.
                   </h3>
                   <p className="mt-2 text-sm text-muted">
@@ -78,7 +78,7 @@ export default function ContactForm() {
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  className="space-y-4 rounded-3xl bg-paper p-6 md:p-8"
+                  className="space-y-4 rounded-3xl border border-line bg-paper p-6 md:p-8"
                 >
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Field
@@ -101,7 +101,7 @@ export default function ContactForm() {
                     required
                   />
                   <label className="block">
-                    <span className="text-[11px] font-medium uppercase tracking-wider text-muted">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
                       Message
                     </span>
                     <textarea
@@ -109,16 +109,16 @@ export default function ContactForm() {
                       onChange={update("message")}
                       rows={4}
                       required
-                      className="mt-1.5 w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-ink/50 focus:shadow-sm"
+                      className="mt-1.5 w-full border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-red"
                     />
                   </label>
-                  {error && <p className="text-sm text-red-600">{error}</p>}
+                  {error && <p className="text-sm text-red">{error}</p>}
                   <button
                     type="submit"
-                    className="group flex w-full items-center justify-center gap-2 rounded-full bg-ink py-3 pl-6 pr-2 text-sm font-medium text-white transition hover:opacity-90 hover:shadow-lg"
+                    className="group flex w-full items-center justify-center gap-2 bg-red py-3.5 text-sm font-semibold text-white transition hover:bg-red-dark"
                   >
                     Send Message
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-lime text-ink transition-transform group-hover:translate-x-0.5">
+                    <span className="transition-transform group-hover:translate-x-0.5">
                       <Arrow />
                     </span>
                   </button>
@@ -147,7 +147,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="text-[11px] font-medium uppercase tracking-wider text-muted">
+      <span className="text-[11px] font-semibold uppercase tracking-wider text-muted">
         {label}
       </span>
       <input
@@ -155,7 +155,7 @@ function Field({
         value={value}
         onChange={onChange}
         required={required}
-        className="mt-1.5 w-full rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-ink/50 focus:shadow-sm"
+        className="mt-1.5 w-full border border-line bg-white px-4 py-3 text-sm text-ink outline-none transition focus:border-red"
       />
     </label>
   );

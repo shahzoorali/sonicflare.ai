@@ -5,29 +5,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0e0f12",
-        paper: "#f4f3ef",
-        offwhite: "#f4f3ef",
-        line: "#e7e6e0",
-        muted: "#6b6b6b",
-        lime: {
-          DEFAULT: "#cfeb2d",
-          dark: "#b8d320",
+        // Equinix palette
+        ink: "#131925", // primary navy — text on light, dark panel bg
+        navy: {
+          DEFAULT: "#131925",
+          card: "#1c2434", // slightly lighter card inside dark panels
+          line: "#2a3346",
         },
-        positive: "#1fc274",
-        slate: "#7a8696",
-        sage: "#7fa68a",
-        lavender: "#8085a3",
+        red: {
+          DEFAULT: "#e91c24", // Equinix red accent
+          dark: "#c20d14",
+        },
+        cloud: "#f2f3f4", // light card / muted surface
+        paper: "#f5f2f8", // light lavender page base
+        line: "#e5e2ec", // hairline borders on light
+        muted: "#5b6473", // secondary text on light
+        // legacy alias kept so any stray reference still resolves to the accent
+        lime: { DEFAULT: "#e91c24", dark: "#c20d14" },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Montserrat", "Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         "4xl": "2rem",
         "5xl": "2.5rem",
       },
       boxShadow: {
-        card: "0 8px 32px -20px rgba(14, 15, 18, 0.18)",
+        card: "0 10px 40px -24px rgba(19, 25, 37, 0.25)",
       },
       keyframes: {
         "fade-up": {
@@ -41,7 +46,7 @@ const config: Config = {
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out both",
-        "capability-card": "capability-card 0.4s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "capability-card": "capability-card 0.45s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },

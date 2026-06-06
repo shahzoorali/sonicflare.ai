@@ -1,27 +1,26 @@
 import { ecosystemNodes } from "@/lib/content";
-import ScrollReveal from "./ScrollReveal";
 
 export default function StakeholderStrip() {
+  const row = [...ecosystemNodes, ...ecosystemNodes];
+
   return (
-    <section className="px-3 py-6 md:px-5 md:py-8">
-      <div className="mx-auto max-w-6xl">
-        <ScrollReveal variant="fade-in" duration={600}>
-          <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-6">
-            <p className="text-sm text-muted">
-              Aligning every stakeholder in the AI infrastructure ecosystem
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
-              {ecosystemNodes.map((node) => (
-                <span
-                  key={node}
-                  className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs font-medium text-ink/80 transition hover:border-lime hover:bg-lime/10"
-                >
-                  {node}
-                </span>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
+    <section className="py-12 md:py-16">
+      <div className="mx-auto max-w-[1400px] px-5 md:px-10">
+        <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted">
+          Aligning every stakeholder in the AI infrastructure ecosystem
+        </p>
+      </div>
+      <div className="marquee-mask overflow-hidden">
+        <div className="flex w-max animate-marquee items-center gap-12 px-6">
+          {row.map((node, i) => (
+            <span
+              key={`${node}-${i}`}
+              className="whitespace-nowrap font-display text-xl font-bold text-ink/30 transition-colors hover:text-ink/60 md:text-2xl"
+            >
+              {node}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

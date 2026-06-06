@@ -2,8 +2,8 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StakeholderStrip from "@/components/StakeholderStrip";
 import About from "@/components/About";
+import ScrollStatement from "@/components/ScrollStatement";
 import Capabilities from "@/components/Capabilities";
-import WhySection from "@/components/WhySection";
 import EcosystemDiagram from "@/components/EcosystemDiagram";
 import Timeline from "@/components/Timeline";
 import Stats from "@/components/Stats";
@@ -21,9 +21,9 @@ export default function Home() {
         <Hero />
         <StakeholderStrip />
         <About />
-        <Capabilities {...capabilitiesAI} meshClass="mesh-dark-warm" />
-        <Capabilities {...capabilitiesITParks} meshClass="mesh-dark-cool" />
-        <WhySection />
+        <ScrollStatement />
+        <Capabilities {...capabilitiesAI} />
+        <Capabilities {...capabilitiesITParks} />
         <EcosystemDiagram />
         <Timeline />
         <Stats />

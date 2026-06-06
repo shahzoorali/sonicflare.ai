@@ -13,20 +13,20 @@ export const nav = [
 
 export const team = [
   {
-    name: "Venkatesh Kannan",
+    name: "Vinita Surana",
     role: "Founding Team",
-    photo: "/team/venkatesh.jpg",
-    initials: "VK",
+    photo: "/team/vinita.png",
+    initials: "VS",
     bio: [
-      "Venkatesh Kannan is a business strategist and entrepreneur with experience across manufacturing, finance, and growth strategy. He holds an MBA from Washington University in St. Louis, specializing in Finance and Entrepreneurship, and brings a strong analytical and execution-focused approach to business building and scale.",
-      "During his early career, Venkatesh interned with the Danube Fund in Hungary, where he gained exposure to valuation, investment analysis, and understanding how businesses create long-term enterprise value.",
-      "As the CEO of Dynetic Products, he leads industrial and engineering-focused operations with an emphasis on execution, operational efficiency, and strategic growth. Through Aarohana Advisors, he advises companies in the technology and retail sectors on market positioning, growth strategy, and business expansion.",
-      "Venkatesh's focus will be on structuring, strategic development, commercial planning, and enabling scalable growth platforms for next-generation digital infrastructure initiatives.",
+      "Vinita Surana is a global business leader, investor, and strategic operator whose work spans energy, real estate, manufacturing, and early-stage technology. She brings to SonicFlare AI a rare blend of operating depth and capital-market fluency, shaped by more than a decade of building and scaling complex, multi-stakeholder ventures.",
+      "She holds an MBA from The Wharton School, University of Pennsylvania, and a Master's in International Business from Manchester Business School — a foundation that informs her sharp commercial instincts and her global perspective on infrastructure, capital, and policy.",
+      "As Executive Director of the Surana Group of Companies, Vinita leads innovation and expansion across solar energy, real estate, and manufacturing — directly relevant to the land, power, and infrastructure foundations that hyperscale AI projects depend on. Through VS Capital Ventures and her role as Entrepreneur-in-Residence at Phi Capital, she invests in and mentors high-growth founders, and serves as a jury member on The Lion's Den, alongside leadership roles with FICCI YFLO, JITO, and FAPCCI.",
+      "At SonicFlare AI, Vinita's focus is on investor coordination, strategic partnerships, and stakeholder enablement — connecting projects with aligned capital and helping shape the commercial structures that move large-scale AI infrastructure initiatives from intent to execution.",
     ],
     roles: [
-      { org: "Dynetic Products", detail: "Manufacturing — CEO" },
-      { org: "Davrah", detail: "Coffee — Founder" },
-      { org: "Aarohana Advisors", detail: "Advisory — Partner" },
+      { org: "Surana Group of Companies", detail: "Energy & Infrastructure — Executive Director" },
+      { org: "VS Capital Ventures", detail: "Venture Capital — Founder" },
+      { org: "Phi Capital", detail: "Entrepreneur-in-Residence" },
     ],
   },
   {
@@ -46,20 +46,20 @@ export const team = [
     ],
   },
   {
-    name: "Vinita Surana",
+    name: "Venkatesh Kannan",
     role: "Founding Team",
-    photo: "/team/vinita.png",
-    initials: "VS",
+    photo: "/team/venkatesh.jpg",
+    initials: "VK",
     bio: [
-      "Vinita Surana is a global business leader, investor, and strategic operator whose work spans energy, real estate, manufacturing, and early-stage technology. She brings to SonicFlare AI a rare blend of operating depth and capital-market fluency, shaped by more than a decade of building and scaling complex, multi-stakeholder ventures.",
-      "She holds an MBA from The Wharton School, University of Pennsylvania, and a Master's in International Business from Manchester Business School — a foundation that informs her sharp commercial instincts and her global perspective on infrastructure, capital, and policy.",
-      "As Executive Director of the Surana Group of Companies, Vinita leads innovation and expansion across solar energy, real estate, and manufacturing — directly relevant to the land, power, and infrastructure foundations that hyperscale AI projects depend on. Through VS Capital Ventures and her role as Entrepreneur-in-Residence at Phi Capital, she invests in and mentors high-growth founders, and serves as a jury member on The Lion's Den, alongside leadership roles with FICCI YFLO, JITO, and FAPCCI.",
-      "At SonicFlare AI, Vinita's focus is on investor coordination, strategic partnerships, and stakeholder enablement — connecting projects with aligned capital and helping shape the commercial structures that move large-scale AI infrastructure initiatives from intent to execution.",
+      "Venkatesh Kannan is a business strategist and entrepreneur with experience across manufacturing, finance, and growth strategy. He holds an MBA from Washington University in St. Louis, specializing in Finance and Entrepreneurship, and brings a strong analytical and execution-focused approach to business building and scale.",
+      "During his early career, Venkatesh interned with the Danube Fund in Hungary, where he gained exposure to valuation, investment analysis, and understanding how businesses create long-term enterprise value.",
+      "As the CEO of Dynetic Products, he leads industrial and engineering-focused operations with an emphasis on execution, operational efficiency, and strategic growth. Through Aarohana Advisors, he advises companies in the technology and retail sectors on market positioning, growth strategy, and business expansion.",
+      "Venkatesh's focus will be on structuring, strategic development, commercial planning, and enabling scalable growth platforms for next-generation digital infrastructure initiatives.",
     ],
     roles: [
-      { org: "Surana Group of Companies", detail: "Energy & Infrastructure — Executive Director" },
-      { org: "VS Capital Ventures", detail: "Venture Capital — Founder" },
-      { org: "Phi Capital", detail: "Entrepreneur-in-Residence" },
+      { org: "Dynetic Products", detail: "Manufacturing — CEO" },
+      { org: "Davrah", detail: "Coffee — Founder" },
+      { org: "Aarohana Advisors", detail: "Advisory — Partner" },
     ],
   },
 ];
